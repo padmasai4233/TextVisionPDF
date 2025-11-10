@@ -18,7 +18,7 @@ function App() {
     setLoadingQuiz(true);
 
     try {
-      const res = await axios.post("/api/quiz", {
+      const res = await axios.post("https://textvisionpdf-backend.vercel.app/api/quiz", {
         title: pdfData.title,
         prompt: pdfData.description || "",
       });
