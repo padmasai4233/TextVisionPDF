@@ -77,7 +77,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>Built by Padma Sai 💡 | Powered by Gemini AI</p>
+        <p>Built by Padma Sai 💡</p>
       </footer>
     </div>
   );
