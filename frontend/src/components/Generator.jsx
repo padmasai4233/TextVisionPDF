@@ -10,7 +10,7 @@ const Generator = ({ onGenerate }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("/api/generate", { title, prompt });
+      const res = await axios.post("https://textvisionpdf-backend.vercel.app/api/generate", { title, prompt });
       const generated = res.data.content || res.data;
       onGenerate(generated);
     } catch (err) {
