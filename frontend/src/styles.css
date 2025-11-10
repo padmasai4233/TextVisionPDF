@@ -1,0 +1,578 @@
+/* 🌈 General Reset & Fonts */
+body {
+  margin: 0;
+  font-family: "Inter", "Poppins", sans-serif;
+  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+  min-height: 100vh;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+/* 🏠 Hero Section */
+.hero-header {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeSlide 0.8s ease-in-out;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #333;
+  opacity: 0.8;
+  margin-top: -5px;
+}
+
+/* 📄 Main Section */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* 🧊 Glass-style cards */
+.card, .generator, .preview, .quiz {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.card:hover, .generator:hover, .preview:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 🌀 Loading Spinner */
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.6);
+  border-top: 4px solid #222;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 🕊️ Fade Animations */
+.fade-in {
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔘 Buttons */
+button {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 18px;
+  margin: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(37, 117, 252, 0.4);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 🧭 Footer */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: #333;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .card, .generator, .preview {
+    padding: 15px;
+  }
+}
+
+
+/* 🧠 Generator Section */
+.generator-card {
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 30px 40px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.generator-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.generator-subtext {
+  color: #333;
+  opacity: 0.8;
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+/* 🧾 Input Styling */
+.generator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  text-align: left;
+}
+
+.input-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  outline: none;
+  transition: all 0.3s ease;
+  color: #222;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ⚡ Generate Button */
+.generate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.generate-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(37, 117, 252, 0.4);
+}
+
+.generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 🌀 Button Loader */
+.btn-loader {
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .generator-card {
+    padding: 20px;
+  }
+  .generator-title {
+    font-size: 1.5rem;
+  }
+  .input-group input,
+  .input-group textarea {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+/* 🎯 QUIZ OVERLAY & CONTAINER */
+.quiz-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+.quiz-box {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  width: 90%;
+  max-width: 750px;
+  border-radius: 20px;
+  padding: 25px 35px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  animation: scaleIn 0.6s ease-out;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+/* 🧭 HEADER */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 10px;
+}
+
+.quiz-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.close-btn {
+  background: transparent;
+  font-size: 1.2rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: crimson;
+  transform: scale(1.2);
+}
+
+/* 📘 QUESTION & OPTIONS */
+.quiz-item {
+  margin-bottom: 25px;
+}
+
+.quiz-question {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #111;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.option {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.option.chosen {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+}
+
+.option.correct {
+  background: rgba(56, 239, 125, 0.85);
+  color: white;
+}
+
+.option.wrong {
+  background: rgba(255, 77, 77, 0.8);
+  color: white;
+}
+
+/* 🧮 FOOTER & SCORE */
+.quiz-footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  color: white;
+  font-size: 1rem;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(37, 117, 252, 0.5);
+}
+
+/* 📊 Score Bar Animation */
+.result-section {
+  margin-top: 20px;
+}
+
+.score-bar {
+  width: 100%;
+  height: 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.score-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  border-radius: 10px;
+  transition: width 0.4s ease-in-out;
+}
+
+.result-text {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #1a1a1a;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* 📄 PDF PREVIEW */
+.pdf-preview {
+  width: 100%;
+  max-width: 850px;
+  margin: 20px auto;
+  text-align: center;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+.pdf-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.pdf-header p {
+  color: #333;
+  opacity: 0.8;
+  margin-bottom: 25px;
+}
+
+/* 📜 Glass Document Container */
+.glass-box {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px 35px;
+  text-align: left;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  max-height: 70vh;
+  overflow-y: auto;
+  transition: all 0.4s ease;
+}
+
+.pdf-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.pdf-desc {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin-bottom: 15px;
+}
+
+/* 📑 Sections */
+.pdf-sections h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 15px;
+  color: #1a1a1a;
+}
+
+.pdf-sections p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.pdf-section {
+  border-left: 4px solid transparent;
+  padding-left: 12px;
+  transition: all 0.3s ease;
+}
+
+.pdf-section:hover {
+  border-left: 4px solid #2575fc;
+  background: rgba(37, 117, 252, 0.07);
+  border-radius: 8px;
+}
+
+/* 🧭 Buttons */
+.pdf-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary, .btn-accent {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(37, 117, 252, 0.4);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+}
+.btn-secondary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(221, 36, 118, 0.4);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, #56ab2f, #a8e063);
+  color: #fff;
+}
+.btn-accent:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(86, 171, 47, 0.4);
+}
+
+/* 🌬️ Animations */
+.fade-slide {
+  animation: fadeSlideUp 0.6s ease both;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 700px) {
+  .glass-box {
+    padding: 20px;
+  }
+  .pdf-buttons {
+    flex-direction: column;
+  }
+}
